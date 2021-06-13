@@ -12,7 +12,7 @@
     "url": "git+https://github.com/arichard-info/svelte-static.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/@arichard-info"
   },
   "bin": {
     "svelte-static": "./bin/svelte-static"
@@ -39,5 +39,5 @@
   "devDependencies": {
     "portfinder": "^1.0.28"
   },
-  "gitHead": "a5caa76f7ba09381960cf9a0b22471bff696b86a"
+  "gitHead": "1ef02e1454b7960cddf11a65be14d97a3621f3a7"
 }
