@@ -5,6 +5,7 @@ env:
   GITHUB_SHA: ${{ github.sha }}
 jobs:
   publish:
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
       # Retrieves repo content
