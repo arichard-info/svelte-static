@@ -6,7 +6,7 @@ init().catch((e) => {
 });
 
 function init() {
-	const pkg = require('../../../package.json');
+	const pkg = require('./../package.json');
 	const argv = require('minimist')(process.argv.slice(2));
 
 	const commands = argv._;
