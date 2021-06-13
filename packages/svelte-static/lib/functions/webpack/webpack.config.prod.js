@@ -3,7 +3,7 @@ const path = require('path');
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
-const outputPath = path.join(__dirname, '/../../../../../dist');
+const outputPath = path.join(__dirname, '/../../../../../../dist');
 const appPath = path.join(__dirname, './../../app/')
 
 const static = {
@@ -69,7 +69,7 @@ const client = {
 		rules: [
 			{
 				test: /\.svelte$/,
-				exclude: /node_modules/,
+				// exclude: /node_modules/,
 				use: {
 					loader: 'svelte-loader',
 					options: {

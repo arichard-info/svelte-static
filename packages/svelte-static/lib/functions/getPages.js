@@ -4,9 +4,10 @@ const datasources = require('./../datasources')
 
 async function getPages(state) {
     console.log('get pages...');
+    const {createPages} = require(state.config.paths.STATIC_CONFIG)
 	time(chalk.green('[\u2713] Pages fetched'));
-    const { getPages: getExportPages, App } = await require('./../../../../dist/export');
-    let pages = await getExportPages({ datasources });
+    const { getPages: getExportPages, App } = await require('./../../../../../dist/export');
+    let pages = await getExportPages({ datasources, createPages });
 
     pages = await Promise.all(pages.map(async page => {
         page.template.componentModule = await page.template.getModule();

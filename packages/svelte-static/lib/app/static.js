@@ -1,10 +1,9 @@
 import AppComponent from './App.svelte';
 import { getTemplateFromName, getLayoutFromName } from './utils';
-import { createPages } from './../../../../pages-config'
 
 export const App = AppComponent;
 
-export const getPages = async ({ datasources }) => {
+export const getPages = async ({ datasources, createPages }) => {
 
 	let pages = [];
 	const createPage = (url = '', config) => {
