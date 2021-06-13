@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.4 (2021-06-13)
+
+
+### Bug Fixes
+
+* bin file pathname ([bf7bc7e](https://github.com/arichard-info/svelte-static/commit/bf7bc7e41395d3147577246c0f0e8f5598d43a6e))
+
+
+
+
+
 ## 0.0.3 (2021-06-13)
 
 
