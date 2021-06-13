@@ -1,0 +1,16 @@
+{
+    "packages": [
+      "packages/*"
+    ],
+    "version": "independent",
+    "command": {
+      "publish": {
+        "ignoreChanges": ["**/__tests__/**", "**/*.md"],
+        "conventionalCommits": true,
+        "message": "chore(release): publish",
+        "registry": "https://npm.pkg.github.com/"
+      },
+      "version": {
+      }
+    }
+  }

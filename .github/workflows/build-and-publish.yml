@@ -1,0 +1,28 @@
+name: build and publish packages
+on:
+  push:
+env:
+  GITHUB_SHA: ${{ github.sha }}
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/master'
+    steps:
+      # Retrieves repo content
+      - uses: actions/checkout@v2
+      # Set NPM TOKEN to access private repositories from @dktunited
+      - name: -- npm config
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken ${{ secrets.NPM_AUTH_TOKEN }}
+      # Update release number
+      - name: Update release number
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          npm run release
+          git push
+      # Publishes npm package
+      - name: NPM publish
+        run: |
+          npx lerna publish --yes from-package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
