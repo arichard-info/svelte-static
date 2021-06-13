@@ -1,5 +1,9 @@
 {
-  "private": true,
+    "name": "root",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arichard-info/svelte-static.git"
+  },
   "scripts": {
     "release": "npx lerna version -y --conventional-commits"
   },
@@ -8,6 +12,5 @@
   ],
   "devDependencies": {
     "standard-version": "^9.3.0"
-  },
-  "name": "svelte-static"
+  }
 }
