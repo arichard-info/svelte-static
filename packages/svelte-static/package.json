@@ -1,35 +1,35 @@
 {
-    "name": "svelte-static",
-    "description": "Static site generator for Svelte",
-    "version": "0.0.1",
-    "license": "MIT",
-    "main": "lib/index.js",
-    "engines": {
-      "node": ">=14.16.1"
-    },
-    "bin": {
-      "svelte-static": "./bin/svelte-static"
-    },
-    "scripts": {},
-    "peerDependencies": {
-		"svelte": "^3.38.2"
-    },
-    "dependencies": {
-        "chalk": "^4.1.1",
-		"cross-env": "^7.0.3",
-		"eval": "^0.1.6",
-		"express": "^4.17.1",
-		"express-static": "^1.2.6",
-		"fs-extra": "^10.0.0",
-		"perf_hooks": "0.0.1",
-		"webpack": "^5.38.1",
-		"webpack-cli": "^4.7.0",
-		"webpack-dev-server": "^3.11.2",
-		"webpack-node-externals": "^3.0.0",
-        "axios": "^0.21.1",
-        "svelte-loader": "^3.1.1"
-    },
-    "devDependencies": {
-		"portfinder": "^1.0.28"
-    }
+  "name": "svelte-static",
+  "description": "Static site generator for Svelte",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=14.16.1"
+  },
+  "bin": {
+    "svelte-static": "./bin/svelte-static"
+  },
+  "scripts": {},
+  "peerDependencies": {
+    "svelte": "^3.38.2"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "cross-env": "^7.0.3",
+    "eval": "^0.1.6",
+    "express": "^4.17.1",
+    "express-static": "^1.2.6",
+    "fs-extra": "^10.0.0",
+    "perf_hooks": "0.0.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-node-externals": "^3.0.0",
+    "axios": "^0.21.1",
+    "svelte-loader": "^3.1.1"
+  },
+  "devDependencies": {
+    "portfinder": "^1.0.28"
   }
+}
