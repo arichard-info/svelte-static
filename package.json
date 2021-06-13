@@ -1,16 +1,16 @@
 {
     "name": "root",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arichard-info/svelte-static.git"
-  },
-  "scripts": {
-    "release": "npx lerna version -y --conventional-commits"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "standard-version": "^9.3.0"
-  }
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arichard-info/svelte-static.git"
+    },
+    "scripts": {
+        "release": "npx lerna version -y --conventional-commits"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "standard-version": "^9.3.0"
+    }
 }
