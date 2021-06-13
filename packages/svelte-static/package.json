@@ -1,5 +1,5 @@
 {
-  "name": "@arichard-infor/svelte-static",
+  "name": "@arichard-info/svelte-static",
   "description": "Static site generator for Svelte",
   "version": "0.0.2",
   "license": "MIT",
@@ -39,5 +39,5 @@
   "devDependencies": {
     "portfinder": "^1.0.28"
   },
-  "gitHead": "edd40c19be51aebbd4f3c5fc8231b27df389b15b"
+  "gitHead": "172d0b247e275129645523f3170de2e5a9862577"
 }
