@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 const chalk = require('chalk');
 //
-const webpackConfig = require('./webpack.config.prod');
+const { getClientConfig, getStaticConfig } = require('./webpack.config.prod');
 const { time, timeEnd } = require('../../utils');
 
 async function buildProductionBundles(state) {
@@ -11,7 +11,10 @@ async function buildProductionBundles(state) {
 	time(chalk.green('[\u2713] App Bundled'));
 
 	state = await new Promise(async (resolve, reject) => {
-		webpack([...webpackConfig]).run(async (err, stats) => {
+		webpack([
+			getClientConfig(state.config), 
+			getStaticConfig(state.config)
+		]).run(async (err, stats) => {
 			if (err) {
 				console.log(chalk.red(err.stack || err));
 				if (err.details) {

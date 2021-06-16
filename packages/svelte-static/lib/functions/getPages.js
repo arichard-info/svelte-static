@@ -4,7 +4,7 @@ const datasources = require('./../datasources')
 
 async function getPages(state) {
     console.log('get pages...');
-    const {createPages} = require(state.config.paths.STATIC_CONFIG)
+    const {createPages} = require(state.config.paths.staticConfig)
 	time(chalk.green('[\u2713] Pages fetched'));
     const { getPages: getExportPages, App } = await require('./../../../../../dist/export');
     let pages = await getExportPages({ datasources, createPages });

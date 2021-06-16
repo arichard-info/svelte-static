@@ -1,6 +1,9 @@
-const path = require('path')
+const path = require('path');
 
-const DEFAULT_STATIC_CONFIG = 'static.config.js'
+const PROJECT_ROOT = path.join(process.cwd());
+const DEFAULT_STATIC_CONFIG = 'static.config.js';
+const DEFAULT_TEMPLATES_DIR = 'templates';
+const DEFAULT_LAYOUTS_DIR = 'layouts';
 
 function getConfig(state) {
     const config = {
@@ -9,7 +12,12 @@ function getConfig(state) {
             port: 3000,
         },
         paths: {
-            STATIC_CONFIG: path.join(process.cwd(), DEFAULT_STATIC_CONFIG)
+            projectRoot: PROJECT_ROOT,
+            staticConfig: path.join(PROJECT_ROOT, DEFAULT_STATIC_CONFIG),
+            templates: path.join(PROJECT_ROOT, 'src', DEFAULT_TEMPLATES_DIR),
+            layouts: path.join(PROJECT_ROOT, 'src', DEFAULT_LAYOUTS_DIR),
+            output: path.join(PROJECT_ROOT, 'dist'),
+            coreApp: path.join(__dirname, './../app/'),
         }
     }
     state.config = config;

@@ -4,20 +4,21 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
-const outputPath = path.join(__dirname, '/../../../../../dist');
-const appPath = path.join(__dirname, './../../app/');
-
 const getClientConfig = (config) => {
 	return {
 		entry: {
-			client: appPath + 'client/index.js',
+			client: config.paths.coreApp + 'client/index.js',
 		},
 		resolve: {
 			extensions: ['.mjs', '.js', '.svelte'],
 			mainFields: ['svelte', 'browser', 'module', 'main'],
+			alias: {
+				'@templates': config.paths.templates,
+				'@layouts': config.paths.layouts,
+			}
 		},
 		output: {
-			path: outputPath,
+			path: config.paths.output,
 			filename: '[name].js',
 			chunkFilename: 'client.[name].[id].[contenthash].js',
 		},
