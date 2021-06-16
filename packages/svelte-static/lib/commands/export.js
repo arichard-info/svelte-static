@@ -1,7 +1,7 @@
-const getConfig = require('./../build/getConfig')
-const getPages = require('./../build/getPages')
-const buildPages = require('./../build/buildPages')
-const exportPages = require('./../build/exportPages')
+const getConfig = require('./../functions/getConfig')
+const getPages = require('./../functions/getPages')
+const buildPages = require('./../functions/buildPages')
+const exportPages = require('./../functions/exportPages')
 
 const exportFunc = async (state = {}) => {
     state = await getConfig(state);

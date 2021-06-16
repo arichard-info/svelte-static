@@ -1,6 +1,6 @@
-const getConfig = require('./../build/getConfig')
-const cleanDistDirectory = require('./../build/cleanDistDirectory')
-const buildProductionBundles = require('./../build/webpack/buildProductionBundles');
+const getConfig = require('./../functions/getConfig')
+const cleanDistDirectory = require('./../functions/cleanDistDirectory')
+const buildProductionBundles = require('./../functions/webpack/buildProductionBundles');
 
 const bundle = async (state = {}) => {
     state = await getConfig(state);

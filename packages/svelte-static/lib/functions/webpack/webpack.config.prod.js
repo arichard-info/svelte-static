@@ -1,22 +1,21 @@
-const path = require('path');
-
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
-const outputPath = path.join(__dirname, '/../../../../../dist');
-const appPath = path.join(__dirname, './../../app/')
-
-const static = {
+const getStaticConfig = (config) => ({
     target: "node",
 	entry: {
-		'export': appPath + 'static.js'
+		'export': config.paths.coreApp + 'static.js'
 	},
 	resolve: {
 		extensions: ['.mjs', '.js', '.svelte'],
 		mainFields: ['svelte', 'module', 'main'],
+		alias: {
+			'@templates': config.paths.templates,
+			'@layouts': config.paths.layouts,
+		}
 	},
 	output: {
-		path: outputPath,
+		path: config.paths.output,
 		filename: '[name].js',
 		libraryTarget: 'commonjs2',
 		chunkFilename: 'export.[name].[id].[contenthash].js',
@@ -25,7 +24,6 @@ const static = {
 		rules: [
 			{
 				test: /\.svelte$/,
-				// exclude: /node_modules/,
 				use: {
 					loader: 'svelte-loader',
 					options: {
@@ -50,18 +48,22 @@ const static = {
 	},
 	mode,
 	devtool: prod ? false : 'source-map'
-};
+})
 
-const client = {
+const getClientConfig = (config) => ({
 	entry: {
-		'client': appPath + 'client/index.js'
+		'client': config.paths.coreApp + 'client/index.js'
 	},
 	resolve: {
 		extensions: ['.mjs', '.js', '.svelte'],
 		mainFields: ['svelte', 'browser', 'module', 'main'],
+		alias: {
+			'@templates': config.paths.templates,
+			'@layouts': config.paths.layouts,
+		}
 	},
 	output: {
-		path: outputPath,
+		path: config.paths.output,
 		filename: '[name].js',
 		chunkFilename: 'client.[name].[id].[contenthash].js',
 	},
@@ -69,7 +71,6 @@ const client = {
 		rules: [
 			{
 				test: /\.svelte$/,
-				exclude: /node_modules/,
 				use: {
 					loader: 'svelte-loader',
 					options: {
@@ -93,6 +94,6 @@ const client = {
 	},
 	mode,
 	devtool: prod ? false : 'source-map'
-}
+})
 
-module.exports = [client, static];
+module.exports = { getClientConfig, getStaticConfig };

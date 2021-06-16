@@ -7,9 +7,6 @@ const { time, timeEnd, findAvailablePort } = require('../../utils');
 const htmlTemplate = require('../buildPages/htmlTemplate');
 const getDevConfig = require('./webpack.config.dev');
 
-const outputPath = path.join(__dirname, '/../../../../../dist');
-const appPath = path.join(__dirname, './../../app/');
-
 let devServer;
 
 async function servePages(state) {
@@ -20,7 +17,7 @@ async function servePages(state) {
 	const devConfig = getDevConfig(state.config);
 
 	const devServerConfig = {
-		contentBase: [outputPath],
+		contentBase: [state.config.paths.output],
 		publicPath: '/',
 		historyApiFallback: true,
 		compress: false,
