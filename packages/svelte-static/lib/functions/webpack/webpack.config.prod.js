@@ -26,7 +26,7 @@ const getStaticConfig = (config) => ({
 		rules: [
 			{
 				test: /\.svelte$/,
-				// exclude: /node_modules/,
+				exclude: /node_modules/,
 				use: {
 					loader: 'svelte-loader',
 					options: {

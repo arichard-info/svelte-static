@@ -1,7 +1,7 @@
 /* eslint-disable import/no-dynamic-require, react/no-danger, import/no-mutable-exports */
 const webpack = require('webpack');
 const chalk = require('chalk');
-//
+
 const { getClientConfig, getStaticConfig } = require('./webpack.config.prod');
 const { time, timeEnd } = require('../../utils');
 
