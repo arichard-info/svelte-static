@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.6 (2021-06-16)
+
+
+### Bug Fixes
+
+* **config:** Path configuration ([#2](https://github.com/arichard-info/svelte-static/issues/2)) ([7dabe42](https://github.com/arichard-info/svelte-static/commit/7dabe423fc1bf72b0fc3b519addaf1a21c655b99))
+
+
+
+
+
 ## 0.0.5 (2021-06-13)
 
 **Note:** Version bump only for package @arichard-info/svelte-static
