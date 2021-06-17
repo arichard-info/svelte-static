@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0 (2021-06-17)
+
+
+### Features
+
+* clean webpack conf ([#3](https://github.com/arichard-info/svelte-static/issues/3)) ([c6511c3](https://github.com/arichard-info/svelte-static/commit/c6511c34091be66cdc689288d268989d1968cc5a))
+
+
+
+
+
 ## 0.0.6 (2021-06-16)
 
 
