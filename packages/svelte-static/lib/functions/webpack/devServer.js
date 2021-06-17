@@ -5,7 +5,7 @@ const path = require('path');
 
 const { time, timeEnd, findAvailablePort } = require('../../utils');
 const htmlTemplate = require('../buildPages/htmlTemplate');
-const getDevConfig = require('./webpack.config.dev');
+const getClientConfig = require('./config/client');
 
 let devServer;
 
@@ -14,7 +14,7 @@ async function servePages(state) {
 	const port = await findAvailablePort(intendedPort);
 	state.config.devServer.port = port;
 
-	const devConfig = getDevConfig(state.config);
+	const devConfig = getClientConfig(state.config);
 
 	const devServerConfig = {
 		contentBase: [state.config.paths.output],
