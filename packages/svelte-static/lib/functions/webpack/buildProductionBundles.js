@@ -2,7 +2,8 @@
 const webpack = require('webpack');
 const chalk = require('chalk');
 
-const { getClientConfig, getStaticConfig } = require('./webpack.config.prod');
+const getClientConfig = require('./config/client');
+const getStaticConfig = require('./config/static');
 const { time, timeEnd } = require('../../utils');
 
 async function buildProductionBundles(state) {

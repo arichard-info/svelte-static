@@ -7,6 +7,9 @@ const DEFAULT_LAYOUTS_DIR = 'layouts';
 
 function getConfig(state) {
     const config = {
+        is: {
+            dev: !!state.dev
+        },
         devServer: {
             host: 'localhost',
             port: 3000,
