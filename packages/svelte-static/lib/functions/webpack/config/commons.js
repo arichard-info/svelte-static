@@ -18,7 +18,7 @@ module.exports = (type, config) => ({
 							hydratable: !config.is.dev
 						},
 						emitCss: false,
-						hotReload: false,
+						hotReload: type === "client" && config.is.dev,
 					}
 				}
 			},
