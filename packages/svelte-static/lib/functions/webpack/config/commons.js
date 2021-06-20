@@ -3,6 +3,7 @@ module.exports = (type, config) => ({
         alias: {
             '@templates': config.paths.templates,
             '@layouts': config.paths.layouts,
+			'svelte': config.paths.svelte
         }
     },
     module: {

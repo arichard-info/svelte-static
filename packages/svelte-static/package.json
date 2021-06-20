@@ -6,6 +6,7 @@
   "engines": {
     "node": ">=14.16.1"
   },
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arichard-info/svelte-static.git"

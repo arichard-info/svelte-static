@@ -19,6 +19,7 @@ function getConfig(state) {
             staticConfig: path.join(PROJECT_ROOT, DEFAULT_STATIC_CONFIG),
             templates: path.join(PROJECT_ROOT, 'src', DEFAULT_TEMPLATES_DIR),
             layouts: path.join(PROJECT_ROOT, 'src', DEFAULT_LAYOUTS_DIR),
+            svelte: path.join(PROJECT_ROOT, 'node_modules', 'svelte'),
             output: path.join(PROJECT_ROOT, 'dist'),
             coreApp: path.join(__dirname, './../app/'),
         }

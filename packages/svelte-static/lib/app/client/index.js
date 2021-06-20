@@ -6,8 +6,6 @@ const renderApp = async ({ template = {}, layout = {} }) => {
 	const templateComponent = await getTemplateFromName(template.component);
 	const layoutComponent = await getLayoutFromName(layout.component);
 
-    console.log(template)
-
 	return new AppComponent({
 		target: document.getElementById('_root'),
 		hydrate: false,
