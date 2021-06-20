@@ -3,6 +3,7 @@ module.exports = (type, config) => ({
         alias: {
             '@templates': config.paths.templates,
             '@layouts': config.paths.layouts,
+			'svelte': config.paths.svelte
         }
     },
     module: {
@@ -17,7 +18,7 @@ module.exports = (type, config) => ({
 							hydratable: !config.is.dev
 						},
 						emitCss: false,
-						hotReload: type === "client" && config.is.dev,
+						hotReload: false,
 					}
 				}
 			},
