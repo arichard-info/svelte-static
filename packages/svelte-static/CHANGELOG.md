@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.1 (2021-06-20)
+
+
+### Bug Fixes
+
+* **core:** fix router ([#4](https://github.com/arichard-info/svelte-static/issues/4)) ([bd5a7ca](https://github.com/arichard-info/svelte-static/commit/bd5a7cafc588e169a4895b19e2c74f3c5520f697))
+
+
+
+
+
 # 0.1.0 (2021-06-17)
 
 
