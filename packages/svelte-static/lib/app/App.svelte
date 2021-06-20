@@ -8,7 +8,6 @@
   const router = initRouterStore({ layout, template });
 
   setContext("router", router);
-  setContext("test", "toto");
 </script>
 
 <svelte:component
