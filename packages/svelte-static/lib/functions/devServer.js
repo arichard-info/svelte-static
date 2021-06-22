@@ -3,9 +3,9 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const path = require('path');
 
-const { time, timeEnd, findAvailablePort } = require('../../utils');
-const htmlTemplate = require('../buildPages/htmlTemplate');
-const getClientConfig = require('./config/client');
+const { time, timeEnd, findAvailablePort } = require('../utils');
+const htmlTemplate = require('./buildPages/htmlTemplate');
+const getClientConfig = require('./../webpack/client');
 
 let devServer;
 

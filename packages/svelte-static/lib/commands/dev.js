@@ -1,7 +1,7 @@
 const getConfig = require('./../functions/getConfig')
 const getPages = require('./../functions/getPages')
 const buildPages = require('./../functions/buildPages')
-const devServer = require('./../functions/webpack/devServer')
+const devServer = require('./../functions/devServer')
 
 const dev = async (state = {}) => {
     state = await getConfig(state);

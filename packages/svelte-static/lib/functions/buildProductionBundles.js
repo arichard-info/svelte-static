@@ -2,9 +2,9 @@
 const webpack = require('webpack');
 const chalk = require('chalk');
 
-const getClientConfig = require('./config/client');
-const getStaticConfig = require('./config/static');
-const { time, timeEnd } = require('../../utils');
+const getClientConfig = require('../webpack/client');
+const getStaticConfig = require('../webpack/static');
+const { time, timeEnd } = require('../utils');
 
 async function buildProductionBundles(state) {
 	// Build static pages and JSON
