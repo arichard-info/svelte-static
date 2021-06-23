@@ -4,6 +4,7 @@ const buildPages = require('./../functions/buildPages')
 const devServer = require('./../functions/devServer')
 
 const dev = async (state = {}) => {
+    state.mode = "dev";
     state = await getConfig(state);
     state = await getPages(state);
     state = await buildPages(state);

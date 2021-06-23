@@ -1,11 +1,11 @@
 const getCommons = require('./commons')
 
-const getStaticConfig = (config) => {
-    const commons = getCommons('static', config);
+const getStaticConfig = (state) => {
+    const commons = getCommons('static', state);
     return {
         target: "node",
         entry: {
-            'export': config.paths.coreApp + 'static.js'
+            'export': state.config.paths.coreApp + 'static.js'
         },
         resolve: {
             ...commons.resolve,
@@ -13,7 +13,7 @@ const getStaticConfig = (config) => {
             mainFields: ['svelte', 'module', 'main'],
         },
         output: {
-            path: config.paths.output,
+            path: state.config.paths.output,
             filename: '[name].js',
             libraryTarget: 'commonjs2',
             chunkFilename: 'export.[name].[id].[contenthash].js',
@@ -21,8 +21,8 @@ const getStaticConfig = (config) => {
         module: {
             rules: [...commons.module.svelteRules]
         },
-        mode: config.is.dev ? "development" : "production",
-        devtool: config.is.dev && 'source-map'
+        mode: state.mode === "dev" ? "development" : "production",
+        devtool: state.mode === "dev" && 'source-map'
     }
 }
 

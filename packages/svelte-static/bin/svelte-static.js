@@ -28,7 +28,6 @@ function init() {
 		return build(options, help);
 	}
   	if (commands[0] === 'dev') {
-	  	options.dev = true;
 		return dev(options, help);
 	}
 

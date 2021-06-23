@@ -1,11 +1,10 @@
 const chalk = require('chalk');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const path = require('path');
 
-const { time, timeEnd, findAvailablePort } = require('../utils');
-const htmlTemplate = require('./buildPages/htmlTemplate');
-const getClientConfig = require('./../webpack/client');
+const buildWebpackConfig = require('./buildWebpackConfig')
+const htmlTemplate = require('./../buildPages/htmlTemplate');
+const { time, timeEnd, findAvailablePort } = require('./../../utils');
 
 let devServer;
 
@@ -14,7 +13,7 @@ async function servePages(state) {
 	const port = await findAvailablePort(intendedPort);
 	state.config.devServer.port = port;
 
-	const devConfig = getClientConfig(state.config);
+	const webpackConfig = buildWebpackConfig(state);
 
 	const devServerConfig = {
 		contentBase: [state.config.paths.output],
@@ -50,7 +49,7 @@ async function servePages(state) {
 	let first = true;
 	let skipLog = false;
 	const startedAt = Date.now();
-	const devCompiler = webpack(devConfig);
+	const devCompiler = webpack(webpackConfig);
 
 	console.log('Bundling Application...');
 	time(chalk.green('[\u2713] Application Bundled'));

@@ -1,10 +1,10 @@
 const getCommons = require('./commons')
 
-const getClientConfig = (config) => {
-    const commons = getCommons('client', config);
+const getClientConfig = (state) => {
+    const commons = getCommons('client', state);
 	return {
 		entry: {
-			client: config.paths.coreApp + 'client/index.js',
+			client: state.config.paths.coreApp + 'client/index.js',
 		},
 		resolve: {
             ...commons.resolve,
@@ -12,15 +12,15 @@ const getClientConfig = (config) => {
 			mainFields: ['svelte', 'browser', 'module', 'main'],
 		},
 		output: {
-			path: config.paths.output,
+			path: state.config.paths.output,
 			filename: '[name].js',
 			chunkFilename: 'client.[name].[id].[contenthash].js',
 		},
 		module: {
 			rules: [...commons.module.svelteRules],
 		},
-        mode: config.is.dev ? "development" : "production",
-        devtool: config.is.dev && 'source-map'
+        mode: state.mode === "dev" ? "development" : "production",
+        devtool: state.mode === "dev" && 'source-map'
 	};
 };
 

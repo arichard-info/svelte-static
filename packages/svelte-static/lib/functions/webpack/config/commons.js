@@ -1,9 +1,9 @@
-module.exports = (type, config) => ({
+module.exports = (type, state) => ({
     resolve: {
         alias: {
-            '@templates': config.paths.templates,
-            '@layouts': config.paths.layouts,
-			'svelte': config.paths.svelte
+            '@templates': state.config.paths.templates,
+            '@layouts': state.config.paths.layouts,
+			'svelte': state.config.paths.svelte
         }
     },
     module: {
@@ -15,10 +15,10 @@ module.exports = (type, config) => ({
 					options: {
 						compilerOptions: {
 							generate: type === "static" ? "ssr" : undefined,
-							hydratable: !config.is.dev
+							hydratable: !(state.mode === "dev")
 						},
 						emitCss: false,
-						hotReload: type === "client" && config.is.dev,
+						hotReload: type === "client" && state.mode === "dev",
 					}
 				}
 			},
