@@ -3,7 +3,7 @@ const getHooks = (plugins, hook) => {
       throw new Error('A hook ID is required!')
     }
     const hooks = []
-    plugins.forEach(plugin => hooks.push(plugin.hooks[hook]))
+    plugins && plugins.forEach(plugin => hooks.push(plugin.hooks[hook]))
     return hooks.filter(Boolean)
   }
 

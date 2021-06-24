@@ -1,15 +1,25 @@
 {
-  "name": "svelte-static-plugin-sass",
+  "name": "@arichard-info/svelte-static-plugin-sass",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arichard-info/svelte-static.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/arichard-info"
+  },
   "dependencies": {
+    "autoprefixer": "^10.2.6",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.5",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0"
   }

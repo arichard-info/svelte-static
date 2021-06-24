@@ -1,9 +1,9 @@
 const { reduceHooks, getHooks } = require('./utils')
 
 const hooks = {
-    webpack: state => {
+    webpack: (config, state) => {
         const hooks = getHooks(state.plugins, 'webpack')
-        return reduceHooks(hooks)(state)
+        return reduceHooks(hooks)(config, state)
     }
 }
 
