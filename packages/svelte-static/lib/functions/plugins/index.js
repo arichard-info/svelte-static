@@ -4,6 +4,10 @@ const hooks = {
     webpack: (config, state) => {
         const hooks = getHooks(state.plugins, 'webpack')
         return reduceHooks(hooks)(config, state)
+    },
+    preprocess: (preprocessors, state) => {
+      const hooks = getHooks(state.plugins, 'preprocess');
+      return reduceHooks(hooks)(preprocessors)
     }
 }
 
