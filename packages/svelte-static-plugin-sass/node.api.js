@@ -1,37 +1,17 @@
-const preprocessStyle = require('./lib/preprocess-style')
+const fs = require('fs-extra');
+const path = require('path');
+
+const preprocessStyle = require('./lib/preprocess-style');
+const getGlobalStyleConfig = require('./lib/getGlobalStyleConfig');
 
 const svelteStaticPluginSass = (pluginConfig) => ({
     preprocess: (preprocessors) => {
         preprocessors.style.push(preprocessStyle)
+        return preprocessors;
     },
     webpack: (webpackConfig, state) => {
-        if(Array.isArray(webpackConfig)) {
-            return webpackConfig.map(config => {
-                // if(config.module && config.module.rules ) {
-                //     config.module.rules = config.module.rules.map(rule => {
-                //         if(rule && rule.use && rule.use.loader === "svelte-loader") {
-                //             rule = {
-                //                 ...rule,
-                //                 use: {
-                //                     ...rule.use,
-                //                     options: {
-                //                         ...rule.options,
-                //                         preprocess: {
-                //                             style: preprocessStyle
-                //                         }
-                //                     }
-                //                 }
-
-                //             }
-                //         }
-
-                //         return rule;
-                //     })
-                // }
-
-                return config;
-            })
-        }
+        const entry = path.join(state.config.paths.projectRoot, pluginConfig.entry || 'src/styles/main.scss');
+        if(fs.existsSync(entry)) webpackConfig.push(getGlobalStyleConfig(state, { entry }))
         return webpackConfig;
     }
 })

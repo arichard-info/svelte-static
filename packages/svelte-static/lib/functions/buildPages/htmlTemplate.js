@@ -5,7 +5,7 @@ const template = ({ css, head, html }) => `
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/style.css" />
   ${head}
   <link as="fetch" rel="preload" href="./data.json" crossorigin="anonymous"/>
   <style id="app-style">${css}</style>
