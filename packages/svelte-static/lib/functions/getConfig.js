@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs-extra');
 
-const { validatePlugin } = require('./plugins')
+const { validatePlugin, hooks } = require('./plugins')
 
 const PROJECT_ROOT = path.join(process.cwd());
 const DEFAULT_STATIC_CONFIG = 'static.config.js';
@@ -20,7 +20,7 @@ function getConfig(state) {
             host: 'localhost',
             port: 3000,
         },
-        plugins: [],
+
         paths: {
             projectRoot: PROJECT_ROOT,
             staticConfig: STATIC_CONFIG_PATH,
@@ -30,6 +30,8 @@ function getConfig(state) {
             output: path.join(PROJECT_ROOT, 'dist'),
             coreApp: path.join(__dirname, './../app/'),
         },
+        plugins: [],
+        assets: [],
         ...config
     }
     state = {
@@ -37,6 +39,7 @@ function getConfig(state) {
         plugins: config.plugins.map(resolvePlugin(config)),
         config
     }
+    state = hooks.getConfig(state);
     return state
 }
 
