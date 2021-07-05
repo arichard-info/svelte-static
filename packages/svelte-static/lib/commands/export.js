@@ -4,6 +4,7 @@ const buildPages = require('./../functions/buildPages')
 const exportPages = require('./../functions/exportPages')
 
 const exportFunc = async (state = {}) => {
+    state.mode = "prod";
     state = await getConfig(state);
     state = await getPages(state);
     state = await buildPages(state);

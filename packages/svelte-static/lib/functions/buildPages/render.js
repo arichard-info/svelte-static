@@ -1,7 +1,6 @@
 const htmlTemplate = require('./htmlTemplate')
 
-
-function setPageHtml(page, App) {
+function setPageHtml(page, { App, config }) {
 	const { layout, template } = page;
 	if (!layout || !template) {
 		page.valid = false;
@@ -15,7 +14,7 @@ function setPageHtml(page, App) {
 		layout: { componentModule: layout.componentModule, props: layout.props || {} },
 		template: { componentModule: template.componentModule, props: template.props || {} },
 	});
-	const htmlContent = htmlTemplate({ html, css: css.code, head });
+	const htmlContent = htmlTemplate({ html, css: css.code, head, assets: config.assets });
 	page.html = htmlContent;
 	return page;
 }
