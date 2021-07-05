@@ -4,7 +4,8 @@ const path = require('path');
 const preprocessStyle = require('./lib/preprocess-style');
 const getGlobalStyleConfig = require('./lib/getGlobalStyleConfig');
 
-const globalStylePath = "/styles/style.js"
+const globalStylePath = "/styles/";
+const globalStyleFile = "style.css";
 
 const svelteStaticPluginSass = (pluginConfig) => {
 
@@ -16,7 +17,7 @@ const svelteStaticPluginSass = (pluginConfig) => {
     return {
         getConfig: (state) => {
             const entry = getEntry(state)
-            if (entry) state.config.assets.push({ type: 'style', path: globalStylePath, position: 'head' });
+            if (entry) state.config.assets.push({ type: 'style', path: globalStylePath + globalStyleFile, position: 'head' });
             return state;
         },
         preprocess: (preprocessors) => {
@@ -25,7 +26,7 @@ const svelteStaticPluginSass = (pluginConfig) => {
         },
         webpack: (webpackConfig, state) => {
             const entry = getEntry(state)
-            if (entry) webpackConfig.push(getGlobalStyleConfig(state, { entry, output: globalStylePath }));
+            if (entry) webpackConfig.unshift(getGlobalStyleConfig(state, { entry, outputPath: globalStylePath, outputFile: globalStyleFile }));
             return webpackConfig;
         },
     }

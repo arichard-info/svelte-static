@@ -11,7 +11,7 @@ async function buildProductionBundles(state) {
 	time(chalk.green('[\u2713] App Bundled'));
 
 	state = await new Promise(async (resolve, reject) => {
-		const config = buildWebpackConfig(state)
+		const config = buildWebpackConfig(state);
 		webpack(config).run(async (err, stats) => {
 			if (err) {
 				console.log(chalk.red(err.stack || err));
