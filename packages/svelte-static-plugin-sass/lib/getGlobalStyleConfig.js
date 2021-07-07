@@ -16,13 +16,13 @@ const getGlobalStyleConfig = (state, { entry, outputPath, outputFile }) => ({
                     loader: miniCssExtractPlugin.loader
                   },
                   {
-                    loader: path.resolve(__dirname, "../node_modules/css-loader"),
+                    loader: "css-loader",
                     options: {
                       importLoaders: 2
                     }
                   },
                   {
-                    loader: path.resolve(__dirname, "../node_modules/sass-loader"),
+                    loader: "sass-loader",
                   }],
             },
         ],
